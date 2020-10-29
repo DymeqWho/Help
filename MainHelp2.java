@@ -9,7 +9,7 @@ public class MainHelp2 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Map<Integer, Integer> inputList = new TreeMap();
+        TreeMap<Integer, Integer> inputList = new TreeMap<>();
         int numberOfInputs = 10;
         int i;
         for (i = 0; i < numberOfInputs; i++) {
@@ -17,14 +17,13 @@ public class MainHelp2 {
             inputList.put(i, scanner.nextInt());
         }
         System.out.println("Input = " + inputList.values().toString());
-        
+
         for (i = 0; i < numberOfInputs; i++) {
             inputList.remove(i, 6);
             inputList.remove(i, 8);
         }
 
-        Set<Integer> set = new TreeSet<>();
-        set.addAll(inputList.values());
+        Set<Integer> set = new TreeSet<>(inputList.values());
         System.out.println("Output = " + set.toString());
     }
 }
